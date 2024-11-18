@@ -1,9 +1,13 @@
 # BITM
 
-This code demonstrates a bubble-induced turbulence model. The main functions and related equationss of the code are as follows:
+This code demonstrates a bubble-induced turbulence model. 
+
+## Next Step
+- Use the volume fraction filtering method to address the excessive impact of high-resolution grids on bubble dynamics calculations in bubble-turbulence simulations [1].
+- Implement the LES version of the bubble-induced turbulence model.
 
 ## Equations
-
+The main functions and related equationss of the code are as follows:
 Blending function F1
 ```math
 \mathrm{arg}1=\min \left( \min \left( \max \left( \frac{1}{\beta ^*}\frac{\sqrt{k}}{\omega y},500\frac{\nu}{y^2\omega} \right) ,\frac{4\alpha _{\omega 2}k}{CD_{k\omega}y^2} \right) ,10 \right) \,\, F1=\tanh\mathrm{(arg}1^4)
@@ -51,3 +55,6 @@ omega equation
 ```math
 \frac{\partial (\alpha \rho \omega )}{\partial t}+\nabla \cdot (\alpha \rho \omega \mathbf{U})=\nabla \cdot (\alpha \rho D_{\omega}^{\mathrm{eff}}\nabla \omega )+\alpha \rho \gamma \min \left( GbyNu,\frac{c_1}{a_1}\beta ^*\omega \cdot \max\mathrm{(}a_1\omega ,b_1F_{23}\sqrt{S^2}) \right) -\frac{2}{3}\alpha \rho \gamma \omega (\nabla \cdot \mathbf{U})-\alpha ^LC_{\omega D}\rho ^L\omega ^2+\left( \frac{1}{C_{\mu}k}S_{\epsilon}-\frac{\omega}{k}S_k \right) \qquad where\,\,S_{\epsilon}=C_{\epsilon}\frac{S_k}{\tau}
 ```
+
+## Reference
+[1] Krull, B., Meller, R., Tekavčič, M., & Schlegel, F. (2024). A filtering approach for applying the two-fluid model to gas-liquid flows on high resolution grids. Chemical Engineering Science, 290, 119909. https://doi.org/10.1016/j.ces.2023.119909
